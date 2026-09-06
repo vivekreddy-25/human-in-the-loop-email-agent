@@ -8,18 +8,20 @@ Autonomous agents that take real-world actions (sending emails, running queries,
 
 ## Architecture
 
+```
 Recipient + instruction
-|
-v
+        |
+        v
 [retrieve_and_draft] --(Qdrant retrieval + Ollama LLM)--> draft email
-|
-v
-[review] --(interrupt: waits for human)--> approve / edit / reject
-|
-+----+----+
-| |
-v v
-[send] [cancel]
+        |
+        v
+   [review] --(interrupt: waits for human)--> approve / edit / reject
+        |
+   +----+----+
+   |         |
+   v         v
+ [send]   [cancel]
+```
 
 - **Orchestration:** LangGraph (`interrupt()` / `Command(resume=...)` pattern)
 - **LLM:** Ollama, `llama3.1:8b` (fully local, no API key needed)
@@ -47,16 +49,17 @@ You'll be asked for a recipient and an instruction (e.g. "follow up on invoice #
 
 ## Project structure
 
+```
 src/email_agent/
-├── config.py # paths, model names, dry-run flag
-├── embeddings.py # Ollama embedding calls
-├── vector_store.py # Qdrant setup + indexing
-├── retriever.py # semantic search over the knowledge base
-├── llm.py # Ollama chat calls for drafting
-├── email_sender.py # dry-run / real SMTP sending
-├── graph.py # LangGraph state machine
-└── cli.py # terminal interface
-
+├── config.py         # paths, model names, dry-run flag
+├── embeddings.py      # Ollama embedding calls
+├── vector_store.py    # Qdrant setup + indexing
+├── retriever.py        # semantic search over the knowledge base
+├── llm.py               # Ollama chat calls for drafting
+├── email_sender.py      # dry-run / real SMTP sending
+├── graph.py              # LangGraph state machine
+└── cli.py                # terminal interface
+```
 
 ## Design notes
 
