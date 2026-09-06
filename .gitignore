@@ -1,0 +1,16 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables / secrets
+.env
+
+# Local vector store data (generated, not source)
+data/qdrant_local/
+
+# OS/editor junk
+.vscode/
+.DS_Store

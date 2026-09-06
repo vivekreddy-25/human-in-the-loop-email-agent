@@ -1,0 +1,5 @@
+New customers who sign up for our service receive a welcome kit including a
+getting-started guide, a dedicated account manager assigned within 48 hours,
+and access to our support portal at support.example.com. The onboarding call
+is typically scheduled within the first week. New customers are also enrolled
+in a 14-day free trial of premium features automatically.

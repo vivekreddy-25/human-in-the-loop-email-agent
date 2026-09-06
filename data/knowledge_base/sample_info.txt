@@ -1,0 +1,4 @@
+Invoice #123 was issued to Acme Corp on 2026-08-01 for $2,450, due within 30 days.
+As of today, payment has not been received. The account contact for Acme Corp is
+Jane Doe (jane.doe@acmecorp.com). Standard policy is to send a polite reminder
+after 15 days past due, and a firmer follow-up after 30 days past due.
